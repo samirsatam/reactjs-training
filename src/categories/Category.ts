@@ -1,7 +1,7 @@
 export default interface Category {
   readonly id: string;
   categoryName: string;
-  categoryType: CategoryType;
+  categoryType: CategoryType | any;
 }
 
 export enum CategoryType {

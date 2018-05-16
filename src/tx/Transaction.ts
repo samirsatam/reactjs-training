@@ -1,4 +1,5 @@
 import Category from '../categories/Category';
+import Payee from '../payees/Payee';
 
 export default interface Transaction  {
   readonly id: string;
@@ -7,11 +8,12 @@ export default interface Transaction  {
   categoryId: string;
   category: Category;
   accountId: string;
-  txType: TxTypes;
+  txType: TxTypes | string;
   txDate: string | Date;
   version: number;
   cleared: boolean;
   amount: number;
+  payee: Payee;
 }
 
 export enum TxTypes {

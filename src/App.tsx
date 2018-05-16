@@ -1,20 +1,22 @@
 import * as React from 'react';
 import './App.css';
-
-import logo from './logo.svg';
+import SiteHeader from './common/components/SiteHeader';
+import TxContainer from './tx/containers/TxContainer';
 
 class App extends React.Component {
   public render() {
+    const today = new Date();
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <main className="container">
+        <SiteHeader companyName="The Super-Fake Banking Corporation." sinceWhen={today}/>
+        <section>
+          <div className="row">
+            <div className="col">
+              <TxContainer/>
+            </div>
+          </div>
+        </section>
+      </main>
     );
   }
 }
